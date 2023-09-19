@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Marcus' Movie Ticket Booth - Now Playing</title>
+</head>
+<body>
+    <div id="app">
+        <h1 id="Header">{{ mainHeader }}</h1>
+        <h2 id="movieHeader">{{ movieHeader }}</h2>
+        <div id="movieRow">
+            <!-- Component for each movie card, containing an image, title, description, and functionality for adding child/adult tickets of that movie. -->
+            <!-- One is made fore all movies in myMovies, passing in movie as the movieobj prop. -->
+            <!-- Calls AddTicket when the newticket event is fired -->
+            <moviecard v-for="movie in myMovies" v-bind:movieobj="movie" v-on:newticket="AddTicket($event)"></moviecard>
+        </div>
+        <!-- Component to store the entire summary (Containing totals as well as movie totals bars components for each movie's total) -->
+        <!-- passing in parameters of the current adultTicketTotal, childTicketTotal, myMovies array, adultPrice, and childPrice defined in app.js -->
+        <ticketsummary v-bind:movielist="myMovies" v-bind:adulttotal="adultTicketTotal" v-bind:childtotal="childTicketTotal" v-bind:adultprice="adultPrice" v-bind:childprice="childPrice" v-on:removemovie="RemoveMovie($event)" v-on:removeticket="RemoveTicket($event)"></ticketsummary>
+        <footer>&copy; Marcus' Ticket Booth, 2023</footer>
+    </div>
+    <!-- Main script (Declaraction fo Vue Instance) -->
+    <script src="app.js" type="module"></script>
+</body>
+</html>

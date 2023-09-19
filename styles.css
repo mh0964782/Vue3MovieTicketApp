@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Public+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Public+Sans:wght@300&family=Raleway:wght@500&display=swap');
+
+/* App Header */
+#Header {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: white;
+    background-color: #e5383b;
+    padding: 5px 0;
+    border-bottom: 1px solid gray;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Movie Cards Section */
+
+#movieHeader {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 34px;
+    font-style: bold;
+    padding: 30px 0 15px 0;
+}
+
+#movieRow {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 15px 0;
+}
+
+/* Movie card buttons/TicketSummary buttons */
+
+.btnSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.btn {
+    margin: 10px;
+}
+
+/* Ticket Summary component */
+
+#ticketSummary {
+    width: 85%;
+    margin: auto;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+#ticketTotalsTitle {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 34px;
+    margin: 15px 0;
+}
+
+/* Each row of the Ticket Summary */
+
+.ticketTotalRow {
+    width: 100%;
+    color: white;
+    background-color: #e5383b;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 5px 5px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+/* Each section (Movie, Adult Tickets, etc) */
+
+.ticketTotalRow > * {
+    font-size: 20px;
+    flex: 20%;
+    padding: 5px 5px;
+    margin: 0;
+}
+
+/* Remove single movie ticket button */
+
+.removeOne {
+    border-radius: 50%;
+}
+
+/* Remove all movie tickets of a movie button */
+
+.removeAll {
+    padding: 0px 0px;
+}
+
+/* Subtotals and totals at the bottom of Ticket Summary */
+
+.Totals {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    padding-left: 46%;
+    padding-right: 24%;
+}
+
+#summaryEnd {
+    border-radius: 0 0 10px 10px;
+}
+
+/* App Footer */
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: #e5383b;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 8px 0;
+    border-top: 1px solid gray;
+}
